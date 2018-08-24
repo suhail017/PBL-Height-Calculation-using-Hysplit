@@ -1,4 +1,6 @@
 #!/bin/sh
+# This code is for calculating the PBL using HYSPLIT software developed by ARL lab,USA
+
 
 echo "enter the month"
 read month
