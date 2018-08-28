@@ -16,7 +16,7 @@ read date
 echo "which date you want to use for pbl calc"
 read choice
 
-if $choice == "1"
+if [ $choice eq 1 ]
 then
 
 wget ftp://arlftp.arlhq.noaa.gov/pub/archives/edas40/edas.$month$year.$date
