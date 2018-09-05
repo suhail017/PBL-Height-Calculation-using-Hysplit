@@ -75,6 +75,6 @@ python /home/lester/Desktop/hysplit/hysplit-924/working/jobFileLooper.py
 
 python /home/lester/Desktop/hysplit/hysplit-924/working/aggregator_hysplit.py
 
-sort  -k2,4 -n /home/lester/Desktop/hysplit/result/mix_hgts.txt
 
+(head -n 1; sort -nk2,4) < /home/lester/Desktop/hysplit/result/mix_hgts.txt 1<> /home/lester/Desktop/hysplit/result/mix_hgts_sort.txt
 
