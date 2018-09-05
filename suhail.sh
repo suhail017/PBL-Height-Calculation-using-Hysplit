@@ -1,4 +1,5 @@
 #!/bin/sh
+#!/bin/sh
 
 echo "enter the month (Enter the first 3 letter of the month)"
 read month
@@ -11,7 +12,7 @@ read year
 echo "enter the date"
 read date
 
-echo "$year $month $date" >> hudai.txt 
+
 
 
 echo "Enter the Meterological file you want to use for PBL. 
@@ -19,8 +20,14 @@ echo "Enter the Meterological file you want to use for PBL.
 > 2=GDAS
 > 3=HRRR"
 
-echo "which file you want to use for pbl calc"
 read choice
+
+FILE=edas.$month$year.001 || edas.$month$year.002
+if [ -e "/home/lester/Desktop/hysplit/$FILE" ]
+then
+echo "File  exist\n"
+
+else
 
 if [ $choice -eq 1  ] &&  [ $date -lt 15 ]
 then
@@ -45,5 +52,29 @@ read week
 
 wget ftp://arlftp.arlhq.noaa.gov/pub/archives/gdas1/gdas1.$month$year.$week
 fi
+
+
+
+
+
+fi
+
+cat /dev/null > /home/lester/Desktop/hysplit/hysplit-924/working/parker_r2.txt
+
+echo "\nEnter the month in digit"
+read mont
+
+for time in 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+do
+	echo "$year $mont $date $time" >> /home/lester/Desktop/hysplit/hysplit-924/working/parker_r2.txt
+done
+
+rm hysplit-924/working/UTEP_*
+python /home/lester/Desktop/hysplit/hysplit-924/working/jobFileLooper.py 
+
+
+python /home/lester/Desktop/hysplit/hysplit-924/working/aggregator_hysplit.py
+
+sort  -k2,4 -n /home/lester/Desktop/hysplit/result/mix_hgts.txt
 
 
