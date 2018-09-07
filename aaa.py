@@ -6,8 +6,8 @@ with open("mix_hgts_sort.txt") as f:
 	lines = f.readlines()[1:]
 	
 
-x = [line.split()[1] for line in lines]
-y = [line.split()[3] for line in lines]
+x = [float(line.split()[1]) for line in lines]
+y = [float(line.split()[3]) for line in lines]
 
 fig = plt.figure()
 
