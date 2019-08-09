@@ -1,2 +1,6 @@
 # Hysplit-PBL-calculation
-Trying to compute the PBL using hysplit 
+Compute the PBL using hysplit 
+
+Methods:
+
+we are using different meterolgical dataset to compute the PBLH for specific lat and lon. 
