@@ -1,5 +1,5 @@
 # Hysplit-PBL-calculation
-Compute the PBL using hysplit 
+Compute the Planetary Boundary layer height using [hysplit]( https://www.ready.noaa.gov/HYSPLIT.php).
 
 ## Methods:
 
